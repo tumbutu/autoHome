@@ -56,6 +56,11 @@ The steps will not be explained, thus it is highly recommended that you search o
 works, most importantly the transister.
 
 
+### Reference Pictures
+picture 1 : 
+![alt text][logo]
+
+[logo]: https://github.com/nichieaaron/autoHome/blob/master/pictures/picture1.jpg "DHT11 Sensor Connect"
 
 
   
