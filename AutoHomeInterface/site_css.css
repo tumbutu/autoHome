@@ -1,0 +1,70 @@
+body {
+	background-image: url()
+}
+
+#form_div{
+	position: absolute;
+	width: 700px;
+	margin:auto;
+	top:0;
+	left:0;
+	right:0;
+	bottom: 0;
+	height: 950px;
+	border:2px solid #555;
+	//background-color: #ccc;
+	border-radius: 20px;
+	padding: 10px;
+	text-align: center;
+	
+}
+
+#form_div h2{
+	font-weight: bold;
+	color: #505050;
+	font-size:40px;
+}
+
+.button{
+	background-color: #4CAF50;
+	border: none;
+	color: white;
+	padding: 16px 32px;
+	text-align:center;
+	text-decoration:none;
+	display: inline-block;
+	font-size: 50px;
+	margin: 4px 2px;
+	transition-duration:0.2s;
+	cursor:pointer;
+	width: 500px;
+	height: 200px;
+	
+}
+
+.buttonOff{
+	background-color: red;
+	color:white;
+	border-radius: 10px;
+}
+
+.buttonOn{
+	background-color: blue;
+	color:white;
+	border-radius: 5px;
+}
+
+.buttonOff:active{
+	background-color:  white;
+	color:red;
+	border:2px solid red;	
+	border-radius: 10px;
+}
+
+
+.buttonOn:active{
+	background-color: white;
+	color:blue;
+	border:2px solid blue;
+	border-radius: 10px;	
+}
