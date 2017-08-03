@@ -57,23 +57,20 @@ works, most importantly the transister.
 
 
 ### Reference Pictures
-picture 1 : 
-![alt text][logo]
 
-[logo]: https://github.com/nichieaaron/autoHome/blob/master/pictures/picture1.jpg "DHT11 Sensor"
+![alt text][a]
 
-picture 2 : 
-![alt text][logo]
-
-[logo]: https://github.com/nichieaaron/autoHome/blob/master/pictures/picture2.jpg "Ultra Sonar Sensor"
-
-picture 3 : 
-![alt text][logo]
-
-[logo]: https://github.com/nichieaaron/autoHome/blob/master/pictures/picture3.jpg "130 Motor"
+ [a]: https://github.com/nichieaaron/autoHome/blob/master/pictures/picture1.jpg "DHT11 Sensor"                     
 
 
+![alt text][b]
 
+[b]: https://github.com/nichieaaron/autoHome/blob/master/pictures/picture2.jpg "Ultra Sonar Sensor"
+
+
+![alt text][c]
+
+[c]: https://github.com/nichieaaron/autoHome/blob/master/pictures/picture3.jpg "130 Motor"
 
   
 
