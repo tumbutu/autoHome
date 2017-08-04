@@ -115,7 +115,7 @@ understand the configuration, [take a look at this post](https://hackernoon.com/
 | 2. Connect the other end to emiiter leg of the transistor on the breadboard | Be sure to identify the emitter leg correctly |
 | 3. Connect the collector-leg to **gnd-Zero**| Be sure to identify the collector leg correctly |
 
-We will programmatically supply a 3.3v to the transistor through the 220 ohms resistor connected at the *BASE* in a common-collector configuration. At this point, the motor fan is properly connected.
+We will programmatically supply a 3.3v to the transistor through the 220 ohms resistor connected at the *BASE*. At this point, the motor fan is properly connected.
 
 ### Running the Codes
 
