@@ -125,19 +125,4 @@ We will programmatically supply a 3.3v to the transistor through the 220 ohms re
 
 ![alt text][a]
 
- [a]: https://github.com/nichieaaron/autoHome/blob/master/pictures/picture1.jpg "DHT11 Sensor"                     
-
-
-![alt text][b]
-
-[b]: https://github.com/nichieaaron/autoHome/blob/master/pictures/picture2.jpg "Ultra Sonar Sensor"
-
-
-![alt text][c]
-
-[c]: https://github.com/nichieaaron/autoHome/blob/master/pictures/picture3.jpg "130 Motor"
-
-  
-
-  
-
+ [a]: https://github.com/nichieaaron/autoHome/blob/master/pictures/project-image.jpg "project images"                     
