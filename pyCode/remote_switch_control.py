@@ -3,6 +3,7 @@ import time
 
 file = open("/home/pi/Desktop/src/gh/remote_switch.txt","r")
 switch = int(file.readline())	
+file.close()
 
 GPIO.setmode(GPIO.BCM)	#Use board pin numbering
 GPIO.setwarnings(False)

@@ -54,7 +54,11 @@ def gatherData():
 	        if result.is_valid():
 			temp = result.temperature
 			humid = result.humidity
-			
+
+			file = open("/home/pi/Desktop/src/gh/humiTemp.txt","w")
+                        file.writelines([str(humid),"\n",str(temp)])
+                        file.close()
+                        
 			print str({"timestamp": time_now.isoformat(), "temp": temp, "humid": humid})
 			if temp >= 24:
 				
