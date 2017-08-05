@@ -117,12 +117,85 @@ understand the configuration, [take a look at this post](https://hackernoon.com/
 
 We will programmatically supply a 3.3v to the transistor through the 220 ohms resistor connected at the *BASE*. At this point, the motor fan is properly connected.
 
-### Running the Codes
+### Remaining Connection
+1. Connect GPIO10(PIN 19) to the resistor that connects to the **BASE LEG** of the transistor.
+2. Connect the **negative leg** (short leg) of the LED to gnd-zero
+3. Connect *GPIO17(PIN 11)* to the resistor that connects to the **positive leg** (Longer leg) of the LED.
+4. Power up the Raspberry Pi.
 
-### Adding Remote Control Via mobile web interface
+**Useful Tutorial:** [How to use your laptop monitor and keyboard for Raspberry Pi via VNC.](https://diyhacking.com/connect-raspberry-pi-to-laptop-display/)
+ 
+### Running the code
+1. Clone the autoHome repository (if u have not already done so).
+2. Copy the pyCode folder to any location of your choice(eg. Desktop)
+3. At the terminal change directory to the pyCode folder.
 
-### Reference Pictures
+### Blinking the LED
+1. At the terminal run python blink_led.py
+2. You should see the LED blinking continously
+3. Ctrl+c to end it. (That was just a test)
+
+### First Phase Automation
+1. run python *Remote_auto.py*
+2. You shoud see a **json** formatted humidity and temperature values being outputed continously at the terminal.
+![Output 1](https://github.com/nichieaaron/autoHome/blob/master/pictures/output-1.jpg)
+3. If the temperature is greater than 24:
+	 * The LED begins to blink rapidly signaling temperature abnormality 
+	 * The aircon(motor fan) turns on automatically
+4. Ctrl+c
+
+### Second Phase Automation
+The second phase added the Ultra Sonar sensor and also send the data over TCP to a remote destination to be persistently stored in a database(eg. Mongodb). The data storage is optional hence am gonna leave that out.
+
+**Setup your ethernet IPs.**
+Connect your laptop and pi via an Ethernet Cable. Setup two IPs of same network for pi and laptop eg my IPs are as follows:
+  * PI's: 192.168.56.5
+  * Laptop: 192.168.56.10
+
+Having done that continues with the following steps.
+
+1. Copy the file `cloud_client.py` to your laptop or computer.
+2. At the laptop terminal change directory to `cloud_client.py` location and run `python cloud_client.py`
+3. At this point your laptop will be waiting for Pi to push the data over TCP.
+4. Go to Pi terminal and run `python sensor_data_gather_n_transmit.py`
+  * **Note If it throws error run it again (the humidity-temperature sensor takes a few seconds to be ready)**
+5. You should see an output as:
+![Output 2](https://github.com/nichieaaron/autoHome/blob/master/pictures/output-2.JPG)
+6. Check the laptop terminal where u ran `cloud_client.py` and you should see data streaming in JSON format as:
+![Output 3](https://github.com/nichieaaron/autoHome/blob/master/pictures/output-3.JPG)
+7. Check the JSON data and u will see distance value (**i.e Ultra Sonar data**).
+8. If this distance falls below 100 then an object is in range at the door hence the LED turns on to give signal.
+9. While ur terminals at **steps 2 and 4** are still running.
+10. Hover an object in front of the Ultra sonar sensor to see the LED turn on.
+11. You can connect the buzzer parallel to the LED to give alarm alert as well(**Check the buzzer's current and voltage rating
+before**).
+12. Ctrl+c
+
+### Adding Remote Control Via Mobile
+1. Install Apache webserver on Raspberry Pi
+2. Locate the webserver's html folder usually `/var/www/html`
+3. Copy and paste the content of AutoHomeInterface folder in the hmtl folder
+4. Set up wifi network on your phone (eg: autoHomeWifi)
+5. Configure Pi to connect to this Wifi **(google for tutorial to do this if u dont know)**
+6. Restart the Pi. It will come back connected to the autoHomeWifi.
+7. Open Pi terminal run ifconfig to check the wifi IP the phone gave to Pi.
+8. Open a browser on ur phone and key in the Pi's wifi IP address
+9. U should see the mobile interface on ur mobile device:
+10. ![Mobile Interface](https://github.com/nichieaaron/autoHome/blob/master/pictures/mobile-interface.png)
+
+### Change directory to pyCode folder:
+1. At the terminal run: `python humi_n_temp3min.py`
+2. Open another terminal change directory to pyCode and run: `bash remote_switch_scheduler.sh`
+
+At this point you are down. Use the buttons at the interface to control ur home appliances. 
+You can refresh web interface every 3min to get humidity and temperature updates.
+ 
+Thank you!
+
+### Project Pictures
 
 ![alt text][a]
 
  [a]: https://github.com/nichieaaron/autoHome/blob/master/pictures/project-image.jpg "project images"                     
+
+### Project Videos
