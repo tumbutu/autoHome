@@ -138,7 +138,7 @@ We will programmatically supply a 3.3v to the transistor through the 220 ohms re
 ### First Phase Automation
 1. run python *Remote_auto.py*
 2. You shoud see a **json** formatted humidity and temperature values being outputed continously at the terminal.
-![Output 1](https://github.com/nichieaaron/autoHome/blob/master/pictures/output-1.jpg)
+![Output 1](https://github.com/nichieaaron/autoHome/blob/master/pictures/output-1.JPG)
 3. If the temperature is greater than 24:
 	 * The LED begins to blink rapidly signaling temperature abnormality 
 	 * The aircon(motor fan) turns on automatically
@@ -199,3 +199,7 @@ Thank you!
  [a]: https://github.com/nichieaaron/autoHome/blob/master/pictures/project-image.jpg "project images"                     
 
 ### Project Videos
+
+[![Project video 1](https://github.com/nichieaaron/autoHome/blob/master/pictures/autoMain.JPG)](https://www.youtube.com/watch?v=NEBx-8UMVvI)
+
+[![Project video 2](https://github.com/nichieaaron/autoHome/blob/master/pictures/autoMainBuzzer.JPG)](https://www.youtube.com/watch?v=jn5aAB-7gTM)
